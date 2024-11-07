@@ -2,6 +2,11 @@ import { model, Schema, Document } from 'mongoose';
 import { User } from '@interfaces/users.interface';
 
 const userSchema: Schema = new Schema({
+  role: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   name: {
     type: String,
     required: true,
@@ -15,6 +20,11 @@ const userSchema: Schema = new Schema({
   email: {
     type: String,
     required: true,
+    unique: true,
+  },
+  profession: {
+    type: String,
+    required: false,
     unique: true,
   },
   password: {
